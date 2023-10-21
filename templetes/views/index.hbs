@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather app</title>
+    {{!-- <link rel="stylesheet" href="../../main/style.css" />  not working    --}}
+    <style>
+      .tempbox{
+        width: 50px;
+        height: 50px;
+       border: 10px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    {{>header}}
+    <input type="text" class="inputField" >
+    <button class="mybutton">click machi</button>
+    <p>temp is</p> <div class="tempbox"  >......</div>
+     <script >
+     // i wrote scripts here only because , i can not link externl js 
+     const inputvalue=document.querySelector(".inputField")
+      const superbutton = document.querySelector(".mybutton");
+     const resultbox=document.querySelector(".tempbox")
+
+const getinfo = async () => {
+ // alert("welcome");
+ let url=`https://api.openweathermap.org/data/2.5/weather?q=${inputvalue.value}&appid=2d761746cafe1032eaaa62a86eb3598f`
+ const response=await fetch(url)
+ const data=await response.json();
+ console.log(data);
+ console.log(data.main.temp);
+ resultbox.innerText=data.main.temp;
+
+
+
+};
+
+superbutton.addEventListener("click", getinfo);
+</script>
+    
+   
+  </body>
+</html>

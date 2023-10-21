@@ -1,0 +1,9 @@
+i can not link external css and js file in html or .hbs
+
+
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+Key: 2d761746cafe1032eaaa62a86eb3598f
+
+https://api.openweathermap.org/data/2.5/weather?q=london&appid=2d761746cafe1032eaaa62a86eb3598f
